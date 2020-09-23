@@ -3,15 +3,15 @@
 ## Design
   **Use recycler view**
   - Splash fragment
-  - headlines fragment
-  - details fragment
-  - saved fragment
+  - Headlines fragment
+  - Details fragment
+  - Saved fragment
 
 
 ## MVVM
-  - package creation
-  - view model
-  - view
+  - Package creation
+  - View model
+  - View
   - Model
   
 ## Network and API Handling
