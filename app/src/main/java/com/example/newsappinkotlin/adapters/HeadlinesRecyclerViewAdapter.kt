@@ -1,4 +1,4 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.adapters
 
 import android.icu.util.Calendar
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.newsappinkotlin.R
 import com.example.newsappinkotlin.models.HeadLineModel
 import kotlinx.android.synthetic.main.news_card_view.view.*
 
@@ -13,9 +14,11 @@ class HeadlinesRecyclerViewAdapter(var headLines: List<HeadLineModel>?): Recycle
 
     class HeadLineHolder(headlineCard: View): RecyclerView.ViewHolder(headlineCard){
 
-        fun onBInd(headline: HeadLineModel){
+        fun onBind(headline: HeadLineModel){
             itemView.HeadLineTitle.text =headline.headLineTitle
-            itemView.HeadLineSource.text = headline.headLineSource + "•" + getHoursAgo(headline.headLinePublish)
+            itemView.HeadLineSource.text = headline.headLineSource + "•" + getHoursAgo(
+                headline.headLinePublish
+            )
 
             Glide.with(itemView)
                 .load(headline.headLineThumbNail)
@@ -24,14 +27,20 @@ class HeadlinesRecyclerViewAdapter(var headLines: List<HeadLineModel>?): Recycle
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadLineHolder = HeadLineHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.news_card_view, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadLineHolder =
+        HeadLineHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.news_card_view,
+                parent,
+                false
+            )
+        )
 
     override fun getItemCount() = headLines!!.size
 
     override fun onBindViewHolder(holder: HeadLineHolder, position: Int) {
         var headline = headLines!![position]
-        holder.onBInd(headline)
+        holder.onBind(headline)
     }
 
 

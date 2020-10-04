@@ -1,5 +1,6 @@
 package com.example.newsappinkotlin.network
 
+import com.example.newsappinkotlin.models.HeadLineModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,7 +18,7 @@ object ApiClient {
             ApiEndPoints::class.java)
     }
 
-    fun requestTopHeadLines(onResponse :(headlines: TopHeadLinesResponse?) -> Unit, onFail: () -> Unit){
+    fun requestTopHeadLines(onResponse :(headlines: List<HeadLineModel>) -> Unit, onFail: () -> Unit){
         endPoint.getTopHeadLines().enqueue(object : Callback<TopHeadLinesResponse>{
             override fun onFailure(call: Call<TopHeadLinesResponse>, t: Throwable) {
                 onFail.invoke()
@@ -27,7 +28,7 @@ object ApiClient {
                 call: Call<TopHeadLinesResponse>,
                 response: Response<TopHeadLinesResponse>
             ) {
-
+                onResponse.invoke(response.body()!!.headlines)
             }
 
         })

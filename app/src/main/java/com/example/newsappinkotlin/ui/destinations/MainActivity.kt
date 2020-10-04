@@ -1,14 +1,12 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.ui.destinations
 
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.newsappinkotlin.R
+import com.example.newsappinkotlin.network.ApiClient
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_headlines.*
 
 class MainActivity : AppCompatActivity() {
 

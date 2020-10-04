@@ -1,15 +1,9 @@
 package com.example.newsappinkotlin.network
 
+import com.example.newsappinkotlin.models.HeadLineModel
 import com.google.gson.annotations.SerializedName
 
 data class TopHeadLinesResponse(
-    @SerializedName("source") val headLineSource: Source,
-    @SerializedName("title") val headLineTitle: String,
-    @SerializedName("urlToImage") val headLineThumbNail: String,
-    @SerializedName("publishedAt") val published: String
-)
-
-class Source(
-    val id: String?,
-    val name: String
+    @SerializedName("articles") val headlines: List<HeadLineModel>//,
+//    @SerializedName("articles") val headlines: List<HeadLineModel>,
 )
