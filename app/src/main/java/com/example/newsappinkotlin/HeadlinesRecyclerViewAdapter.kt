@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.news_card_view.view.*
 
-class HeadlinesRecyclerViewAdapter(val headLines: List<HeadLineModel>): RecyclerView.Adapter<HeadlinesRecyclerViewAdapter.HeadLineHolder>(){
+class HeadlinesRecyclerViewAdapter(var headLines: List<HeadLineModel>?): RecyclerView.Adapter<HeadlinesRecyclerViewAdapter.HeadLineHolder>(){
 
     class HeadLineHolder(headlineCard: View): RecyclerView.ViewHolder(headlineCard){
 
@@ -26,10 +26,10 @@ class HeadlinesRecyclerViewAdapter(val headLines: List<HeadLineModel>): Recycler
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadLineHolder = HeadLineHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.news_card_view, parent, false))
 
-    override fun getItemCount() = headLines.size
+    override fun getItemCount() = headLines!!.size
 
     override fun onBindViewHolder(holder: HeadLineHolder, position: Int) {
-        var headline = headLines[position]
+        var headline = headLines!![position]
         holder.onBInd(headline)
     }
 

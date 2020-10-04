@@ -4,9 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.destinations.HeadlinesFragment">
+    tools:context=".ui.destinations.HeadlinesFragment"
+    android:id="@+id/headlinesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsFeedRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:listitem="@layout/news_card_view"

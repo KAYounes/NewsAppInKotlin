@@ -8,7 +8,7 @@ interface ApiEndPoints {
     @GET("v2/top-headlines")
 
     fun getTopHeadLines(
-        @Query("country") country: String,
+        @Query("country") country: String = "un",
         @Query("apiKey") key: String = "cac7619eebd84f24a1e30ace5c13708b"
     ): Call<TopHeadLinesResponse>
 
