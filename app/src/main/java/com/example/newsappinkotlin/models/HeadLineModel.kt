@@ -1,4 +1,4 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.models
 
 import com.google.gson.annotations.SerializedName
 

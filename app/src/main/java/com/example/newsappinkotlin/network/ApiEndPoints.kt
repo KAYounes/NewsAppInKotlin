@@ -1,4 +1,5 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.network
+
 
 import retrofit2.Call
 import retrofit2.http.GET

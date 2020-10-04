@@ -1,4 +1,4 @@
-package com.example.newsappinkotlin
+package com.example.newsappinkotlin.network
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,7 +13,8 @@ object ApiClient {
     init {
         val retro = Retrofit.Builder().baseUrl(baseURL).addConverterFactory(GsonConverterFactory.create()).build()
 
-        endPoint = retro.create(ApiEndPoints::class.java)
+        endPoint = retro.create(
+            ApiEndPoints::class.java)
     }
 
     fun requestTopHeadLines(onResponse :(headlines: TopHeadLinesResponse?) -> Unit, onFail: () -> Unit){
@@ -26,7 +27,7 @@ object ApiClient {
                 call: Call<TopHeadLinesResponse>,
                 response: Response<TopHeadLinesResponse>
             ) {
-                onResponse.invoke(response.body())
+
             }
 
         })
