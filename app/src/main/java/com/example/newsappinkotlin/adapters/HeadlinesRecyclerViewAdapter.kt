@@ -16,7 +16,7 @@ class HeadlinesRecyclerViewAdapter(var headLines: List<HeadLineModel>?): Recycle
 
         fun onBind(headline: HeadLineModel){
             itemView.HeadLineTitle.text =headline.headLineTitle
-            itemView.HeadLineSource.text = headline.headLineSource + "•" + getHoursAgo(
+            itemView.HeadLineSource.text = headline.headLineSource.name + "•" + getHoursAgo(
                 headline.headLinePublish
             )
 
